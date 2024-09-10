@@ -7,28 +7,32 @@ interface CardProps {
     title: string;
     description: string;
     tech: string;
+    img: string;
 }
 
-const Card = ({ url, title, description, tech }: CardProps) => {
+const Card = ({ url, title, description, tech, img }: CardProps) => {
   return (
-    <div className="flex w-full h-full mt-20 bg-gray-100 drop-shadow-xl items-center">
-      <div className="w-1/2 hidden sm:block">
+    <div className="flex flex-col sm:flex-row bg-gray-100 drop-shadow-xl rounded-lg overflow-hidden">
+      <div className="w-full sm:w-1/2">
         <Image
-          src="/project-image.jpg"
+          src={img}
           width={750}
           height={750}
           alt="projects image"
+          className="w-full h-auto object-cover"
         />
       </div>
-      <div className="mx-10 w-full sm:w-1/2 p-2">
-        <Link href={url} className="text-yellow-500 hover:text-yellow-600">
-          VISIT LIVE SITE
-        </Link>
-        <h1 className="text-2xl font-semibold mb-2">{title}</h1>
-        <p className="mb-20 line-clamp-3">
-          {description}
-        </p>
-        <p className="text-yellow-500 items-end">{tech}</p>
+      <div className="w-full sm:w-1/2 p-6 flex flex-col justify-between">
+        <div>
+          <Link href={url} className="text-yellow-500 hover:text-yellow-600 text-lg font-semibold">
+            VISIT LIVE SITE
+          </Link>
+          <h1 className="text-2xl font-semibold mt-4 mb-2">{title}</h1>
+          <p className="text-gray-700 mb-4 line-clamp-3">
+            {description}
+          </p>
+        </div>
+        <p className="text-yellow-500 text-sm">{tech}</p>
       </div>
     </div>
   );

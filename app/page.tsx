@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import MeSection from "./components/MeSection";
 import Navbar from "./components/Navbar";
 import ProjectsSection from "./components/ProjectsSection";
-
+import Technology from "./components/Technology";
 
 export default function Home() {
   return (
@@ -17,6 +17,9 @@ export default function Home() {
         </section>
         <section>
           <ProjectsSection />
+        </section>
+        <section>
+          <Technology />
         </section>
         <section>
           <AwardsSection />

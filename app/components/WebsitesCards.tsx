@@ -13,11 +13,13 @@ interface Project {
   title: string;
   description: string;
   tech: string;
+  img: string;
 }
 
 const PROJECTS: Project[] = [
   {
     url: "/",
+    img: "/project-image.jpg",
     title: "Website application",
     description:
       "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, contenthere, making it look like readable English. Lorem Ipsum is simply dummy text of the printing.",
@@ -25,6 +27,7 @@ const PROJECTS: Project[] = [
   },
   {
     url: "/",
+    img: "/project-image2.jpg",
     title: "Website application",
     description:
       "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, contenthere, making it look like readable English. Lorem Ipsum is simply dummy text of the printing.",
@@ -32,6 +35,7 @@ const PROJECTS: Project[] = [
   },
   {
     url: "/",
+    img: "/project-image3.jpg",
     title: "Website application",
     description:
       "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, contenthere, making it look like readable English. Lorem Ipsum is simply dummy text of the printing.",
@@ -52,6 +56,7 @@ const WebsitesCards = () => {
                 title={project.title}
                 description={project.description}
                 tech={project.tech}
+                img={project.img}
               />
             </div>
           </CarouselItem>

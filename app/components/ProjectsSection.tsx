@@ -1,17 +1,41 @@
+"use client";
 import React from "react";
 import WebsitesCards from "./WebsitesCards";
+import { FaArrowRight } from "react-icons/fa";
+import ArrowDown from "./ArrowDown";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/lib/variants";
 
 const ProjectsSection = () => {
   return (
-    <div id="projects" className="w-full h-[100vh] p-4 pt-20 md:px-20 mt-10">
-      <h1 className="text-2xl md:text-3xl tracking-tighter mb-4 md:mb-6">
-        Making Ideas Come to Life!
-      </h1>
-      <p className="tracking-tighter w-full md:w-2/3 lg:w-1/2 mb-6 md:mb-8">
-        The point of using Lorem Ipsum is that it has a more-or-less normal
-        distribution of letters, as opposed to using Content here.
-      </p>
-      <WebsitesCards />
+    <div
+      id="project"
+      className="w-full min-h-[100vh] p-6 pt-20 md:px-20 mt-10 flex flex-col justify-between"
+    >
+      <motion.div
+        className="flex items-center justify-center mb-10"
+        variants={fadeIn("right", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        <h1 className="text-3xl md:text-5xl font-semibold tracking-tight flex items-center">
+          <FaArrowRight className="w-8 h-8 md:w-10 md:h-10 mr-4 text-yellow-500" />
+          Making Ideas Come to Life!
+        </h1>
+      </motion.div>
+      <motion.div
+        className="flex-grow"
+        variants={fadeIn("up", 0.4)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        <WebsitesCards />
+      </motion.div>
+      <div className="mt-10">
+        <ArrowDown path="#tech" />
+      </div>
     </div>
   );
 };
